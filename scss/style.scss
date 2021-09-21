@@ -1,0 +1,333 @@
+@font-face {
+  font-family: montserrat-medium;
+  src: url('../fonts/montserrat-medium.ttf');
+}
+$colorhover: #D7B399;
+
+body{
+  margin: 0;
+  background-color: #F9F6F1;
+}
+.container{
+  //background-color: green;
+  max-width: 60%;
+  height: 100%;
+  display: block;
+  margin: 61px 20% 0 20%;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header{
+  position: sticky;
+  top: 0;
+  padding: 40px 20% 0 20%;
+  box-sizing: border-box;
+  background-color: #F9F6F1;
+}
+.header_menu{
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  height: 40px;
+  margin: 0;
+
+
+
+  &_el{
+  cursor: pointer;
+  line-height:17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+    &:hover{
+      color:$colorhover;
+    }
+    &:active{
+      color: black;
+    }
+  &_basket{
+    margin-right: 15px ;
+    display: flex;
+    &_svg{
+      &:hover{
+        fill: $colorhover;
+      }
+      &:active{
+        fill: black;
+      }
+    }
+
+  }
+  }
+  &_el:nth-child(4){
+    margin: 0 50px;
+  }
+
+}
+//изначально скрыт
+.basket{
+  //width: 500px;
+  background-color: white;
+  border: 1px solid $colorhover;
+  position: absolute;
+  top: 100px;
+  right: 20%;
+  font-family: montserrat-medium;
+  font-size: 14px;
+  padding: 0px;
+  box-sizing: border-box;
+  border: 2px solid$colorhover;
+  border-radius: 10px;
+  &_item{
+    display: flex;
+    margin-left: 2px;
+    margin-bottom: 5px;
+    &_delete{
+      border: none;
+      border: 1px solid transparent;
+      padding: 5px;
+      border-radius: 10px;
+      font-family: montserrat-medium;
+      box-sizing: border-box;
+      margin-right: 5px;
+      &:hover{
+        background-color: white;
+        border: 1px solid $colorhover;
+        color: $colorhover;
+        box-sizing: border-box;
+      }
+
+    }
+  }
+  &_title{
+    text-align: center;
+    background-color: $colorhover;
+    margin: 0 0 4px 0;
+
+  }
+  &_parametrs{
+    display: flex;
+    justify-content: space-between;
+  }
+  &_part{
+    width: 110px;
+    min-height: 10px;
+    display: block;
+  }
+}
+.cart_summ{
+  margin-top: 20px;
+  font-weight: bold;
+}
+.header_block{
+  margin: 172px 0 207px 0;
+  background-image: url("../img/header_title.png");
+  background-position: right;
+  background-size: 556px 377px;
+  background-repeat: no-repeat;
+  &_title{
+    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0;
+  }
+  &_link{
+    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 67px;
+    margin: 35px 0 55px 0;
+  }
+  &_button{
+    font-family: 'montserrat-medium';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.5px;
+    background-color: $colorhover;
+    color: white;
+    padding: 18px 30px 18px 30px;
+    border: none;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    margin-bottom: 119px;
+    cursor: pointer;
+    &:hover{
+      background-color:black;
+      color: $colorhover;
+    }
+    &:active{
+      background-color: $colorhover;
+      color: white;
+    }
+  }
+}
+.reclame{
+  background-color: #212121;
+  padding:80px 0 69px ;
+  &_title{
+    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36.57px;
+    text-align: center;
+    color: white;
+    margin: 0 0 23px 0;
+  }
+  &_text{
+    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 25.56px;
+    text-align: center;
+    color: white;
+    margin: 0;
+  }
+}
+.catalog{
+  //margin: 50px 0 50px 0 ;
+  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .catalog_cart{
+    width: 350px;
+    height: 440px;
+    border-radius: 10px;
+    border: 1px solid $colorhover;
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &_img{
+      display: block;
+      margin: 0 auto;
+    }
+    &_title{
+      display: block;
+      text-align: center;
+      margin: 0 0 10px 0;
+    }
+    &_price{
+      text-align: center;
+      display: block;
+      color: $colorhover;
+      margin: 0 0 10px 0;
+    }
+    &_button{
+      border: 1px solid $colorhover;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 10px;
+      color: $colorhover;
+      border-radius: 10px;
+      background-color: transparent;
+      cursor: pointer;
+      &:hover{
+        background-color: $colorhover;
+        color: white;
+      }
+      &:active{
+        background-color: transparent;
+        color: $colorhover;
+      }
+    }
+    &:hover{
+      border: 4px solid $colorhover;
+      box-sizing: border-box;
+    }
+  }
+}
+.footer{
+  background-color: #212121 ;
+  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  padding: 73px 0 78px 0;
+  //color:#FFFFFF;
+  &_block{
+    margin: 0 20% 0 20%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    //height: ;
+    &_text{
+      width: 201px;
+      color: white;
+      &_txt{
+        display: block;
+        margin-top:32px ;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+    &_title{
+      display: block;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 12px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    &_links{
+      display: flex;
+      justify-content: space-between;
+      width: 692px;
+    }
+    &_list{
+      color: white;
+      list-style-type: none;
+      padding: 0;
+      &_el{
+        text-transform: none;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        &:hover{
+          color: $colorhover;
+        }
+        &:active{
+          color: white;
+        }
+        &_icon{
+          color: $colorhover;
+          &:hover{
+
+          }
+        }
+      }
+    }
+  }
+
+}
+.copyright{
+  display: flex;
+  justify-content: space-between;
+  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 30px 20% 23px 20%;
+  font
+  &_item{
+    display: block;
+  }
+}
+
+.totalSumOnPage{
+  text-align: center;
+  font-family: montserrat-medium;
+}
+
+.counter{
+  display: block;
+  line-height: 28px;
+  margin: 0 0 0 5px;
+}
+

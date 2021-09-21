@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <ul class="header_menu">
+          <li class="header_menu_el"><a>Для мужчин</a></li>
+          <li class="header_menu_el"><a>Для женщин</a></li>
+          <li class="header_menu_el"><a>Для детей</a></li>
+          <li class="header_menu_el">
+            <a><img src="./img/logo.png" alt="logo" /></a>
+          </li>
+          <li class="header_menu_el"><a>Оплата</a></li>
+          <li class="header_menu_el"><a>Доставка</a></li>
+          <li class="header_menu_el">
+            <a class="header_menu_el_basket" @click="show=!show">
+              <svg
+                width="20"
+                height="26"
+                viewBox="0 0 30 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="header_menu_el_basket_svg"
+                  d="M22.2936 10.4909L16.2385 1.40831C15.9632 1.13308 15.5505 0.857849 15.1376 0.857849C14.7248 0.857849 14.3119 0.995464 14.0367 1.40831L7.98165 10.4909H1.37615C0.550459 10.4909 0 11.0413 0 11.867C0 12.0046 0 12.1423 0 12.2799L3.44037 25.078C3.7156 26.179 4.81651 27.1423 6.05505 27.1423H23.945C25.1835 27.1423 26.2844 26.3166 26.5596 25.078L30 12.2799C30 12.1423 30 12.0046 30 11.867C30 11.0413 29.4495 10.4909 28.6239 10.4909H22.2936ZM11.0092 10.4909L15.1376 4.43583L19.2661 10.4909H11.0092ZM15.1376 21.5001C13.6239 21.5001 12.3853 20.2615 12.3853 18.7478C12.3853 17.234 13.6239 15.9955 15.1376 15.9955C16.6514 15.9955 17.8899 17.234 17.8899 18.7478C17.8899 20.2615 16.6514 21.5001 15.1376 21.5001Z"
+                  fill="black"
+                />
+              </svg>
+              <span class="counter">{{ counter }}</span>
+            </a>
+          </li>
+        </ul>
+
+        <!--        Это корзина товаров, которая открывается по нажатию на кнопку-->
+        <div class="basket" v-if="show">
+          <h3 class="basket_title">Ваша корзина</h3>
+          <div class="basket_parametrs">
+            <span class="basket_part">Название товара</span>
+            <span class="basket_part">Количество</span>
+            <span class="basket_part">Цена за шт.</span>
+            <span class="basket_part">Итого</span>
+            <span class="basket_part"></span>
+          </div>
+          <p v-if="!cartItems.length">Нет данных</p>
+          <div class="newProducts" v-for="product of cartItems">
+            <!--        Здесь будут добавлены товары в корзине-->
+
+            <div class="basket_item">
+              <span class="basket_part">{{ product.title }}</span>
+              <span class="basket_part"
+                ><span class="product_number">{{ product.count }}</span> шт.</span
+              >
+              <span class="basket_part"
+                ><span class="product_price">{{ product.price }}</span> руб.</span
+              >
+              <span class="basket_part"
+                ><span class="summOfRow" class="product_price">{{ product.finishprice }}</span>
+                руб.</span
+              >
+              <button class="basket_item_delete" @click="removeProducts(product)">
+                Удалить товар
+              </button>
+            </div>
+          </div>
+          <div class="cart_summ">
+            <span
+              >Товаров в корзине на сумму:<span class="basket_summ"> {{ totalSumm }} </span
+              >рублей</span
+            >
+          </div>
+        </div>
+      </div>
+      <header class="container">
+        <div class="header_block">
+          <h2 class="header_block_title">Зимняя распродажа</h2>
+          <h1 class="header_block_link">скидки до 90%</h1>
+          <button class="header_block_button">Смотреть модели</button>
+        </div>
+      </header>
+      <div class="reclame">
+        <h2 class="reclame_title">Бесплатная доставка от 3000р</h2>
+        <h3 class="reclame_text">Сделайте заказ и получите подарок!</h3>
+      </div>
+      <div class="catalog container">
+        <div class="catalog_cart" v-for="item of products">
+          <img class="catalog_cart_img" :src="item.img" width="250" height="270" alt="photo" />
+          <h3 class="catalog_cart_title">{{ item.title }}</h3>
+          <span class="catalog_cart_price"><span>{{ item.price }}</span>рублей</span>
+          <button
+            class="catalog_cart_button"
+            data-productId="{{ item.price }}"
+            @click="addProducts(item)"
+          >
+            Добавить в корзину
+          </button>
+        </div>
+        <!--        сюда будут добавлены товары-->
+      </div>
+      <div class="totalSumOnPage"></div>
+      <div class="footer">
+        <div class="footer_block">
+          <div class="footer_block_text">
+            <a><img src="./img/logo2.png" alt="logo2" /></a>
+            <span class="footer_block_text_txt"
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus egestas elit,
+              at eleifend elit ornare ut.</span
+            >
+          </div>
+          <div class="footer_block_links">
+            <ul class="footer_block_list">
+              <span class="footer_block_title">Основные ссылки</span>
+              <li class="footer_block_list_el"><a>О компании</a></li>
+              <li class="footer_block_list_el"><a>Каталог</a></li>
+              <li class="footer_block_list_el"><a>Доставка</a></li>
+              <li class="footer_block_list_el"><a>Оплата</a></li>
+            </ul>
+            <ul class="footer_block_list">
+              <span class="footer_block_title">Категории</span>
+              <li class="footer_block_list_el"><a>Мужская одежда</a></li>
+              <li class="footer_block_list_el"><a>Женская одежда</a></li>
+              <li class="footer_block_list_el"><a>Детская одежда</a></li>
+              <li class="footer_block_list_el"><a>Для животных</a></li>
+            </ul>
+            <ul class="footer_block_list">
+              <span class="footer_block_title">Полезные ссылки</span>
+              <li class="footer_block_list_el"><a>Таблица размеров</a></li>
+              <li class="footer_block_list_el"><a>Блог о моде</a></li>
+              <li class="footer_block_list_el"><a>Наша миссия</a></li>
+            </ul>
+            <ul class="footer_block_list">
+              <span class="footer_block_title">Соц сети</span>
+              <li class="footer_block_list_el">
+                <a><i class="fab fa-vk footer_block_list_el_icon"></i> VK.com</a>
+              </li>
+              <li class="footer_block_list_el">
+                <a><i class="fab fa-facebook-square footer_block_list_el_icon"></i> Facebook</a>
+              </li>
+              <li class="footer_block_list_el">
+                <a><i class="fab fa-instagram footer_block_list_el_icon"></i> Instagram</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <span class="copyright_item">Copyright &copy; 2019. Все права защищены</span>
+        <span class="copyright_item">Политика приватности</span>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "id_product": 1,
+    "img": "img/платье.png",
+    "title": "Платье",
+    "price": 1900
+  },
+  {
+    "id_product": 2,
+    "img": "img/штаны.png",
+    "title": "Штаны",
+    "price": 1500
+  },
+  {
+    "id_product": 3,
+    "img": "img/юбка.png",
+    "title": "Юбка",
+    "price": 1000
+  },
+  {
+    "id_product": 4,
+    "img": "img/флиска.png",
+    "title": "Флисовая кофта",
+    "price": 2000
+  },
+  {
+    "id_product": 5,
+    "img": "img/футболка.png",
+    "title": "Футболка",
+    "price": 600
+  },
+  {
+    "id_product": 6,
+    "img": "img/шорты.png",
+    "title": "Шорты",
+    "price": 800
+  },
+  {
+    "id_product": 7,
+    "img": "img/кепка.png",
+    "title": "Кепка",
+    "price": 500
+  },
+  {
+    "id_product": 8,
+    "img": "img/кроссовки.png" ,
+    "title": "Кроссовки",
+    "price": 3200
+  }
+]

@@ -1,0 +1,85 @@
+<div id="app">
+<!--    с помощью v-for перебираем все элементы массива products-->
+    <div v-for="item of products">
+        <p>{{ item.title }}</p>
+        <p>{{ item.price }}</p>
+        <p>Цена с учётом количества: {{ item.price * item.quantity }}</p>
+        <!--Если ссылка, всегда ставим двоеточие-->
+        <img :src="item.img" alt="photo">
+    </div>
+
+<!--    выводим свойство data - name-->
+    <h1>{{ name }}</h1>
+<!--     выводим ссылку, перед href ставим двоеточие-->
+    <a :href="link">Перейти в поисковик</a>
+    <button @click="increase(5)">Increase</button>
+<!--    выводим свойство data - counter-->
+    <p>{{counter}}</p>
+<!--    запускаем метод из data - sayHello: В этом месте будет результат этого метода-->
+    <h2>{{sayHello()}}</h2>
+<!--    тернарный оператор-->
+    <p>{{ counter>10 ? "Больше 10" : "Меньше 10" }}</p>
+<!--    Если show=true, то выведется h2 блок-->
+    <h2 v-if="show">Text is visible</h2>
+<!--    Если show=false, то выведется h2 блок-->
+    <h2 v-else="show">Text is not visible</h2>
+<!--    по нажатию кнопки присвоить show=!show(не show)-->
+    <button @click="show=!show">ОК</button>
+<!--    при наведении мышкой на наш параграф, наш текст отображает наши координаты-->
+    <p @mousemove="getCoordinates()">Some long long text {{ x }} / {{ y }}
+        <!--    при наведении мышкой на наш No move, хотим, чтобы не было движения - остановка события, отмена события-->
+        <span @mousemove.stop>No move</span>
+    </p>
+<!--    Мы хотим чтобы инпут напрямую был связан со свойством name (по умолчанию будет введено значение name)-->
+    <input type="text" v-model.lazy="name">
+<!--    Тег, который указали в свойстве completeEl появится вот в этом блоке-->
+    <div v-html="completeEl"></div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",//'элемент, который будет синхронизироваться - с каким элементом вёрстки мы хотим делать связь с элементом с id="app"
+            data:{//главные свойства
+                name: "Игорь",//Чтобы в вёрстке вывести значение из JS, надо прямо в вёрстк написать {{name}} - указываем, что из data Мы хотим вывести
+                link: "https://google.com",//чтобы вывести ссылку, надо перед href Поставить двоеточие
+                counter: 0,
+                show: false,//показываем или не показываем наши элементы
+                x:0,//координаты
+                y:0,//координаты
+                completeEl:"<a href='https://google.com'>Перейти в поисковик</a>",
+                products:
+                    [
+                        {
+                            title:'laptop',
+                            price: 10000,
+                            quantity: 3,
+                            img: "https://via.placeholder.com/200x150"
+                        },
+                        {
+                            title:'mouse',
+                            price: 1000,
+                            quantity: 5,
+                            img: "https://via.placeholder.com/200x150"
+                        },
+                        {
+                            title:'keyboard',
+                            price: 2000,
+                            quantity: 2,
+                            img: "https://via.placeholder.com/200x150"
+                        },
+                    ]
+            },
+            methods:{
+                sayHello(){//Чтобы из метода обращаться к нашему свойству data - надо использвать this
+                    return `${this.name}, привет!`
+                },
+                increase(x){//Увеличение на какое-то количество, которое задаем при вызове.
+                    this.counter+=x;
+                },
+                getCoordinates(){//Получение координат мышки
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                }
+            }
+        })
+    </script>
