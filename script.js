@@ -14,9 +14,10 @@ const app = new Vue({
     searchLine: "", //свойство для фильтра: то, что введем в инпут, моментально становится доступным в этом свойстве
     show: false, //свойство для корзины, отвечающие за видимость корзины
     cartItems: [], //товары корзины
-    // filtered:[],//отфильтрованные товары
+    filtered: [], //отфильтрованные товары
     counter: 0, //счетчик товаров в корзине
     totalSumm: 0, //итоговая сумма товаров
+    error: false,
   },
   methods: {
     getJson(url) {
@@ -27,6 +28,7 @@ const app = new Vue({
         .catch((error) => {
           //в случае ошибки в консоли выведется ошибка
           console.log(error);
+          this.error = error;
         });
     },
     /**
@@ -95,6 +97,10 @@ const app = new Vue({
       this.cartItems.splice(basketDelete, 1);
       console.log(this.cartItems);
     },
+    filter() {
+      let regExp = new RegExp(this.searchLine, "i");
+      this.filtered = this.products.filter((el) => regExp.test(el.title));
+    },
   },
   mounted() {
     //свойство, которое запускается первым же делом
@@ -103,7 +109,7 @@ const app = new Vue({
         // затем проходимся по данным циклом
         for (let elements of data) {
           this.products.push(elements); //заполняем нашими товарами массив каталога
-          // this.filtered.push(elements);//заволняем нашими товарами массив отфильтрованных товаров
+          this.filtered.push(elements); //заволняем нашими товарами массив отфильтрованных товаров
         }
       });
   },

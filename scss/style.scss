@@ -1,14 +1,14 @@
 @font-face {
   font-family: montserrat-medium;
-  src: url('../fonts/montserrat-medium.ttf');
+  src: url("../fonts/montserrat-medium.ttf");
 }
-$colorhover: #D7B399;
+$colorhover: #d7b399;
 
-body{
+body {
   margin: 0;
-  background-color: #F9F6F1;
+  background-color: #f9f6f1;
 }
-.container{
+.container {
   //background-color: green;
   max-width: 60%;
   height: 100%;
@@ -17,17 +17,17 @@ body{
   padding: 0;
   box-sizing: border-box;
 }
-.header{
+.header {
   position: sticky;
   top: 0;
   padding: 40px 20% 0 20%;
   box-sizing: border-box;
-  background-color: #F9F6F1;
+  background-color: #f9f6f1;
 }
-.header_menu{
+.header_menu {
   font-weight: 500;
   font-size: 14px;
-  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  font-family: "montserrat-medium", "arial", "sans-serif";
   list-style-type: none;
   display: flex;
   justify-content: space-between;
@@ -35,44 +35,39 @@ body{
   height: 40px;
   margin: 0;
 
-
-
-  &_el{
-  cursor: pointer;
-  line-height:17px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-    &:hover{
-      color:$colorhover;
+  &_el {
+    cursor: pointer;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    &:hover {
+      color: $colorhover;
     }
-    &:active{
+    &:active {
       color: black;
     }
-  &_basket{
-    margin-right: 15px ;
-    display: flex;
-    &_svg{
-      &:hover{
-        fill: $colorhover;
-      }
-      &:active{
-        fill: black;
+    &_basket {
+      margin-right: 15px;
+      display: flex;
+      &_svg {
+        &:hover {
+          fill: $colorhover;
+        }
+        &:active {
+          fill: black;
+        }
       }
     }
-
   }
-  }
-  &_el:nth-child(4){
+  &_el:nth-child(4) {
     margin: 0 50px;
   }
-
 }
 //изначально скрыт
-.basket{
+.basket {
   //width: 500px;
   background-color: white;
-  border: 1px solid $colorhover;
   position: absolute;
   top: 100px;
   right: 20%;
@@ -80,13 +75,13 @@ body{
   font-size: 14px;
   padding: 0px;
   box-sizing: border-box;
-  border: 2px solid$colorhover;
+  border: 4px solid$colorhover;
   border-radius: 10px;
-  &_item{
+  &_item {
     display: flex;
     margin-left: 2px;
     margin-bottom: 5px;
-    &_delete{
+    &_delete {
       border: none;
       border: 1px solid transparent;
       padding: 5px;
@@ -94,57 +89,56 @@ body{
       font-family: montserrat-medium;
       box-sizing: border-box;
       margin-right: 5px;
-      &:hover{
+      cursor: pointer;
+      &:hover {
         background-color: white;
         border: 1px solid $colorhover;
         color: $colorhover;
         box-sizing: border-box;
       }
-
     }
   }
-  &_title{
+  &_title {
     text-align: center;
     background-color: $colorhover;
     margin: 0 0 4px 0;
-
   }
-  &_parametrs{
+  &_parametrs {
     display: flex;
     justify-content: space-between;
   }
-  &_part{
+  &_part {
     width: 110px;
     min-height: 10px;
     display: block;
   }
 }
-.cart_summ{
+.cart_summ {
   margin-top: 20px;
   font-weight: bold;
 }
-.header_block{
+.header_block {
   margin: 172px 0 207px 0;
   background-image: url("../img/header_title.png");
   background-position: right;
   background-size: 556px 377px;
   background-repeat: no-repeat;
-  &_title{
-    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  &_title {
+    font-family: "montserrat-medium", "arial", "sans-serif";
     font-weight: 400;
     font-size: 30px;
     line-height: 36px;
     margin: 0;
   }
-  &_link{
-    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  &_link {
+    font-family: "montserrat-medium", "arial", "sans-serif";
     font-weight: 700;
     font-size: 55px;
     line-height: 67px;
     margin: 35px 0 55px 0;
   }
-  &_button{
-    font-family: 'montserrat-medium';
+  &_button {
+    font-family: "montserrat-medium";
     font-weight: 400;
     font-size: 16px;
     line-height: 19.5px;
@@ -156,21 +150,21 @@ body{
     text-transform: uppercase;
     margin-bottom: 119px;
     cursor: pointer;
-    &:hover{
-      background-color:black;
+    &:hover {
+      background-color: black;
       color: $colorhover;
     }
-    &:active{
+    &:active {
       background-color: $colorhover;
       color: white;
     }
   }
 }
-.reclame{
+.reclame {
   background-color: #212121;
-  padding:80px 0 69px ;
-  &_title{
-    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  padding: 80px 0 69px;
+  &_title {
+    font-family: "montserrat-medium", "arial", "sans-serif";
     font-size: 30px;
     font-weight: 700;
     line-height: 36.57px;
@@ -178,8 +172,8 @@ body{
     color: white;
     margin: 0 0 23px 0;
   }
-  &_text{
-    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  &_text {
+    font-family: "montserrat-medium", "arial", "sans-serif";
     font-size: 21px;
     font-weight: 300;
     line-height: 25.56px;
@@ -188,13 +182,13 @@ body{
     margin: 0;
   }
 }
-.catalog{
+.catalog {
   //margin: 50px 0 50px 0 ;
-  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  font-family: "montserrat-medium", "arial", "sans-serif";
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  .catalog_cart{
+  .catalog_cart {
     width: 350px;
     height: 440px;
     border-radius: 10px;
@@ -205,22 +199,22 @@ body{
     flex-direction: column;
     justify-content: center;
 
-    &_img{
+    &_img {
       display: block;
       margin: 0 auto;
     }
-    &_title{
+    &_title {
       display: block;
       text-align: center;
       margin: 0 0 10px 0;
     }
-    &_price{
+    &_price {
       text-align: center;
       display: block;
       color: $colorhover;
       margin: 0 0 10px 0;
     }
-    &_button{
+    &_button {
       border: 1px solid $colorhover;
       margin: 0 auto;
       box-sizing: border-box;
@@ -229,43 +223,43 @@ body{
       border-radius: 10px;
       background-color: transparent;
       cursor: pointer;
-      &:hover{
+      &:hover {
         background-color: $colorhover;
         color: white;
       }
-      &:active{
+      &:active {
         background-color: transparent;
         color: $colorhover;
       }
     }
-    &:hover{
+    &:hover {
       border: 4px solid $colorhover;
       box-sizing: border-box;
     }
   }
 }
-.footer{
-  background-color: #212121 ;
-  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+.footer {
+  background-color: #212121;
+  font-family: "montserrat-medium", "arial", "sans-serif";
   padding: 73px 0 78px 0;
   //color:#FFFFFF;
-  &_block{
+  &_block {
     margin: 0 20% 0 20%;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     //height: ;
-    &_text{
+    &_text {
       width: 201px;
       color: white;
-      &_txt{
+      &_txt {
         display: block;
-        margin-top:32px ;
+        margin-top: 32px;
         font-size: 14px;
         line-height: 22px;
       }
     }
-    &_title{
+    &_title {
       display: block;
       font-weight: 700;
       font-size: 10px;
@@ -273,61 +267,93 @@ body{
       text-transform: uppercase;
       margin-bottom: 20px;
     }
-    &_links{
+    &_links {
       display: flex;
       justify-content: space-between;
       width: 692px;
     }
-    &_list{
+    &_list {
       color: white;
       list-style-type: none;
       padding: 0;
-      &_el{
+      &_el {
         text-transform: none;
         font-weight: 400;
         font-size: 14px;
         line-height: 22px;
         margin-bottom: 10px;
         cursor: pointer;
-        &:hover{
+        &:hover {
           color: $colorhover;
         }
-        &:active{
+        &:active {
           color: white;
         }
-        &_icon{
+        &_icon {
           color: $colorhover;
-          &:hover{
-
+          &:hover {
           }
         }
       }
     }
   }
-
 }
-.copyright{
+.copyright {
   display: flex;
   justify-content: space-between;
-  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  font-family: "montserrat-medium", "arial", "sans-serif";
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
   margin: 30px 20% 23px 20%;
-  font
-  &_item{
+  font &_item {
     display: block;
   }
 }
 
-.totalSumOnPage{
+.totalSumOnPage {
   text-align: center;
   font-family: montserrat-medium;
 }
 
-.counter{
+.counter {
   display: block;
   line-height: 28px;
   margin: 0 0 0 5px;
 }
+.form {
+  display: flex;
+  margin: 30px 20% 0 20%;
+}
+input {
+  border: 1px solid $colorhover;
+  box-sizing: border-box;
+  display: block;
+  padding: 10px;
+  width: 98%;
+  height: 40px;
+  border-radius: 10px;
+}
+.buttonSearch {
+  width: 2%;
+  border: none;
+  display: block;
+  background: transparent;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  &:hover {
+    color: $colorhover;
+  }
+  &:active {
+    color: black;
+  }
+}
 
+.error{
+  text-align: center;
+  margin: 30px;
+  font-size: 30px;
+  color: red;
+  font-family: "montserrat-medium", "arial", "sans-serif";
+}

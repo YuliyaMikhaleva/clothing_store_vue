@@ -24,7 +24,7 @@
           <li class="header_menu_el"><a>Оплата</a></li>
           <li class="header_menu_el"><a>Доставка</a></li>
           <li class="header_menu_el">
-            <a class="header_menu_el_basket" @click="show=!show">
+            <a class="header_menu_el_basket" @click=" show = !show">
               <svg
                 width="20"
                 height="26"
@@ -42,46 +42,49 @@
             </a>
           </li>
         </ul>
+        <!--        корзина товаров: передаем массив товаров корзины и свойство видимости-->
+        <basket :cart-items="cartItems" :show="show"></basket>
+        <!--        <div class="basket" v-if="show">-->
+        <!--          <h3 class="basket_title">Ваша корзина</h3>-->
+        <!--          <div class="basket_parametrs">-->
+        <!--            <span class="basket_part">Название товара</span>-->
+        <!--            <span class="basket_part">Количество</span>-->
+        <!--            <span class="basket_part">Цена за шт.</span>-->
+        <!--            <span class="basket_part">Итого</span>-->
+        <!--            <span class="basket_part"></span>-->
+        <!--          </div>-->
+        <!--          &lt;!&ndash;          если корзина пустая&ndash;&gt;-->
+        <!--          <p v-if="!cartItems.length">Нет данных</p>-->
+        <!--          <div class="newProducts" v-for="product of cartItems">-->
+        <!--            &lt;!&ndash;        Здесь будут добавлены товары в корзине&ndash;&gt;-->
 
-        <!--        Это корзина товаров, которая открывается по нажатию на кнопку-->
-        <div class="basket" v-if="show">
-          <h3 class="basket_title">Ваша корзина</h3>
-          <div class="basket_parametrs">
-            <span class="basket_part">Название товара</span>
-            <span class="basket_part">Количество</span>
-            <span class="basket_part">Цена за шт.</span>
-            <span class="basket_part">Итого</span>
-            <span class="basket_part"></span>
-          </div>
-          <p v-if="!cartItems.length">Нет данных</p>
-          <div class="newProducts" v-for="product of cartItems">
-            <!--        Здесь будут добавлены товары в корзине-->
+<!--                    <div class="basket_item">-->
+<!--                      <span class="basket_part">{{ product.title }}</span>-->
+<!--                      <span class="basket_part"-->
+<!--                      ><span class="product_number">{{ product.count }}</span> шт.</span-->
+<!--                      >-->
+<!--                      <span class="basket_part"-->
+<!--                      ><span class="product_price">{{ product.price }}</span> руб.</span-->
+<!--                      >-->
+<!--                      <span class="basket_part"-->
+<!--                      ><span class="summOfRow" class="product_price">{{ product.finishprice }}</span>-->
+<!--                        руб.</span-->
+<!--                      >-->
+<!--                      <button class="basket_item_delete" @click="removeProducts(product)">-->
+<!--                        Удалить товар-->
+<!--                      </button>-->
+<!--                    </div>-->
 
-            <div class="basket_item">
-              <span class="basket_part">{{ product.title }}</span>
-              <span class="basket_part"
-                ><span class="product_number">{{ product.count }}</span> шт.</span
-              >
-              <span class="basket_part"
-                ><span class="product_price">{{ product.price }}</span> руб.</span
-              >
-              <span class="basket_part"
-                ><span class="summOfRow" class="product_price">{{ product.finishprice }}</span>
-                руб.</span
-              >
-              <button class="basket_item_delete" @click="removeProducts(product)">
-                Удалить товар
-              </button>
-            </div>
-          </div>
-          <div class="cart_summ">
-            <span
-              >Товаров в корзине на сумму:<span class="basket_summ"> {{ totalSumm }} </span
-              >рублей</span
-            >
-          </div>
-        </div>
-      </div>
+<!--                  <div class="cart_summ">-->
+<!--                    <span-->
+<!--                    >Товаров в корзине на сумму:<span class="basket_summ"> {{ totalSumm }} </span-->
+<!--                    >рублей</span-->
+<!--                    >-->
+<!--                  </div>-->
+    </div>
+
+    <!--        Это корзина товаров, которая открывается по нажатию на кнопку-->
+
       <header class="container">
         <div class="header_block">
           <h2 class="header_block_title">Зимняя распродажа</h2>
@@ -93,21 +96,29 @@
         <h2 class="reclame_title">Бесплатная доставка от 3000р</h2>
         <h3 class="reclame_text">Сделайте заказ и получите подарок!</h3>
       </div>
-      <div class="catalog container">
-        <div class="catalog_cart" v-for="item of products">
-          <img class="catalog_cart_img" :src="item.img" width="250" height="270" alt="photo" />
-          <h3 class="catalog_cart_title">{{ item.title }}</h3>
-          <span class="catalog_cart_price"><span>{{ item.price }}</span>рублей</span>
-          <button
-            class="catalog_cart_button"
-            data-productId="{{ item.price }}"
-            @click="addProducts(item)"
-          >
-            Добавить в корзину
-          </button>
-        </div>
-        <!--        сюда будут добавлены товары-->
+      <div class="form">
+        <input type="text" placeholder="Поиск" v-model="searchLine" />
+        <button class="buttonSearch" type="submit" @click="filter()">
+          <i class="fa fa-search"></i>
+        </button>
       </div>
+      <error v-if="error"></error>
+      <products :products="filtered"></products>
+      <!--      <div class="catalog container">-->
+      <!--        <div class="catalog_cart" v-for="item of filtered">-->
+      <!--          <img class="catalog_cart_img" :src="item.img" width="250" height="270" alt="photo" />-->
+      <!--          <h3 class="catalog_cart_title">{{ item.title }}</h3>-->
+      <!--          <span class="catalog_cart_price"><span>{{ item.price }}</span>рублей</span>-->
+      <!--          <button-->
+      <!--            class="catalog_cart_button"-->
+      <!--            data-productId="{{ item.price }}"-->
+      <!--            @click="addProducts(item)"-->
+      <!--          >-->
+      <!--            Добавить в корзину-->
+      <!--          </button>-->
+      <!--        </div>-->
+      <!--        сюда будут добавлены товары-->
+      <!--      </div>-->
       <div class="totalSumOnPage"></div>
       <div class="footer">
         <div class="footer_block">
@@ -160,6 +171,9 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="components/productComponent.js"></script>
+    <script src="components/basketComponent.js"></script>
+    <script src="components/errorComponent.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
