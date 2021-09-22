@@ -3,7 +3,7 @@
   src: url("../fonts/montserrat-medium.ttf"); }
 body {
   margin: 0;
-  background-color: #F9F6F1; }
+  background-color: #f9f6f1; }
 
 .container {
   max-width: 60%;
@@ -18,12 +18,12 @@ body {
   top: 0;
   padding: 40px 20% 0 20%;
   box-sizing: border-box;
-  background-color: #F9F6F1; }
+  background-color: #f9f6f1; }
 
 .header_menu {
   font-weight: 500;
   font-size: 14px;
-  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  font-family: "montserrat-medium", "arial", "sans-serif";
   list-style-type: none;
   display: flex;
   justify-content: space-between;
@@ -37,14 +37,14 @@ body {
     align-items: center;
     text-align: center; }
     .header_menu_el:hover {
-      color: #D7B399; }
+      color: #d7b399; }
     .header_menu_el:active {
       color: black; }
     .header_menu_el_basket {
       margin-right: 15px;
       display: flex; }
       .header_menu_el_basket_svg:hover {
-        fill: #D7B399; }
+        fill: #d7b399; }
       .header_menu_el_basket_svg:active {
         fill: black; }
   .header_menu_el:nth-child(4) {
@@ -52,7 +52,6 @@ body {
 
 .basket {
   background-color: white;
-  border: 1px solid #D7B399;
   position: absolute;
   top: 100px;
   right: 20%;
@@ -60,7 +59,7 @@ body {
   font-size: 14px;
   padding: 0px;
   box-sizing: border-box;
-  border: 2px solid #D7B399;
+  border: 4px solid #d7b399;
   border-radius: 10px; }
   .basket_item {
     display: flex;
@@ -73,15 +72,16 @@ body {
       border-radius: 10px;
       font-family: montserrat-medium;
       box-sizing: border-box;
-      margin-right: 5px; }
+      margin-right: 5px;
+      cursor: pointer; }
       .basket_item_delete:hover {
         background-color: white;
-        border: 1px solid #D7B399;
-        color: #D7B399;
+        border: 1px solid #d7b399;
+        color: #d7b399;
         box-sizing: border-box; }
   .basket_title {
     text-align: center;
-    background-color: #D7B399;
+    background-color: #d7b399;
     margin: 0 0 4px 0; }
   .basket_parametrs {
     display: flex;
@@ -102,23 +102,23 @@ body {
   background-size: 556px 377px;
   background-repeat: no-repeat; }
   .header_block_title {
-    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+    font-family: "montserrat-medium", "arial", "sans-serif";
     font-weight: 400;
     font-size: 30px;
     line-height: 36px;
     margin: 0; }
   .header_block_link {
-    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+    font-family: "montserrat-medium", "arial", "sans-serif";
     font-weight: 700;
     font-size: 55px;
     line-height: 67px;
     margin: 35px 0 55px 0; }
   .header_block_button {
-    font-family: 'montserrat-medium';
+    font-family: "montserrat-medium";
     font-weight: 400;
     font-size: 16px;
     line-height: 19.5px;
-    background-color: #D7B399;
+    background-color: #d7b399;
     color: white;
     padding: 18px 30px 18px 30px;
     border: none;
@@ -128,16 +128,16 @@ body {
     cursor: pointer; }
     .header_block_button:hover {
       background-color: black;
-      color: #D7B399; }
+      color: #d7b399; }
     .header_block_button:active {
-      background-color: #D7B399;
+      background-color: #d7b399;
       color: white; }
 
 .reclame {
   background-color: #212121;
   padding: 80px 0 69px; }
   .reclame_title {
-    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+    font-family: "montserrat-medium", "arial", "sans-serif";
     font-size: 30px;
     font-weight: 700;
     line-height: 36.57px;
@@ -145,7 +145,7 @@ body {
     color: white;
     margin: 0 0 23px 0; }
   .reclame_text {
-    font-family: 'montserrat-medium', 'arial', 'sans-serif';
+    font-family: "montserrat-medium", "arial", "sans-serif";
     font-size: 21px;
     font-weight: 300;
     line-height: 25.56px;
@@ -154,7 +154,7 @@ body {
     margin: 0; }
 
 .catalog {
-  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  font-family: "montserrat-medium", "arial", "sans-serif";
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; }
@@ -162,7 +162,7 @@ body {
     width: 350px;
     height: 440px;
     border-radius: 10px;
-    border: 1px solid #D7B399;
+    border: 1px solid #d7b399;
     box-sizing: border-box;
     margin: 0 0 20px 0;
     display: flex;
@@ -178,30 +178,30 @@ body {
     .catalog .catalog_cart_price {
       text-align: center;
       display: block;
-      color: #D7B399;
+      color: #d7b399;
       margin: 0 0 10px 0; }
     .catalog .catalog_cart_button {
-      border: 1px solid #D7B399;
+      border: 1px solid #d7b399;
       margin: 0 auto;
       box-sizing: border-box;
       padding: 10px;
-      color: #D7B399;
+      color: #d7b399;
       border-radius: 10px;
       background-color: transparent;
       cursor: pointer; }
       .catalog .catalog_cart_button:hover {
-        background-color: #D7B399;
+        background-color: #d7b399;
         color: white; }
       .catalog .catalog_cart_button:active {
         background-color: transparent;
-        color: #D7B399; }
+        color: #d7b399; }
     .catalog .catalog_cart:hover {
-      border: 4px solid #D7B399;
+      border: 4px solid #d7b399;
       box-sizing: border-box; }
 
 .footer {
   background-color: #212121;
-  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  font-family: "montserrat-medium", "arial", "sans-serif";
   padding: 73px 0 78px 0; }
   .footer_block {
     margin: 0 20% 0 20%;
@@ -239,22 +239,21 @@ body {
         margin-bottom: 10px;
         cursor: pointer; }
         .footer_block_list_el:hover {
-          color: #D7B399; }
+          color: #d7b399; }
         .footer_block_list_el:active {
           color: white; }
         .footer_block_list_el_icon {
-          color: #D7B399; }
+          color: #d7b399; }
 
 .copyright {
   display: flex;
   justify-content: space-between;
-  font-family: 'montserrat-medium', 'arial', 'sans-serif';
+  font-family: "montserrat-medium", "arial", "sans-serif";
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
   margin: 30px 20% 23px 20%; }
-  font
-  .copyright_item {
+  font .copyright_item {
     display: block; }
 
 .totalSumOnPage {
@@ -265,5 +264,38 @@ body {
   display: block;
   line-height: 28px;
   margin: 0 0 0 5px; }
+
+.form {
+  display: flex;
+  margin: 30px 20% 0 20%; }
+
+input {
+  border: 1px solid #d7b399;
+  box-sizing: border-box;
+  display: block;
+  padding: 10px;
+  width: 98%;
+  height: 40px;
+  border-radius: 10px; }
+
+.buttonSearch {
+  width: 2%;
+  border: none;
+  display: block;
+  background: transparent;
+  color: black;
+  font-size: 20px;
+  cursor: pointer; }
+  .buttonSearch:hover {
+    color: #d7b399; }
+  .buttonSearch:active {
+    color: black; }
+
+.error {
+  text-align: center;
+  margin: 30px;
+  font-size: 30px;
+  color: red;
+  font-family: "montserrat-medium", "arial", "sans-serif"; }
 
 /*# sourceMappingURL=style.css.map */
